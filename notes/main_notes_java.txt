@@ -1,0 +1,25 @@
+-------------------------------
+###		Corequisite			###
+-------------------------------
+General:
+	JDK - Java Development Kit 
+		- compile and run java code
+
+Code Stucture and conventions:
+	- clas with the same name as file -> inside public static void main()
+	- use PascalCase for naming convention
+	- use camelCase for variables
+	- Java is case sensitive -> int value != int Value
+
+
+
+Linux instalation:
+	Open JDK 11 – an open-source version of JRE and JDK.
+	openjdk version "11.0.16" 2022-07-19
+	OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu122.04)
+	OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
+
+	
+Commands:
+	javac -version -> check for Java Compiler version 
+	java -version -> check for Java runtime
