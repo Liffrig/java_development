@@ -11,6 +11,11 @@ Code Stucture and conventions:
 	- use camelCase for variables
 	- Java is case sensitive -> int value != int Value
 
+	- int + String compiles and gives a string 
+	- char + String compiles and gives a string 
+
+Data Types:
+	-int 4b / long 8b
 
 
 Linux instalation:
