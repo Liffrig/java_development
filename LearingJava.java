@@ -1,18 +1,18 @@
+import java.util.Scanner;
 
 public class LearingJava {
     public static long points = 0L;
     public static void main(String[] args) {
       
-        double pcnt = 0.33333333;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input value:");
 
-        int secondValue = 101;
+        double x = scanner.nextDouble();
 
+        System.out.println(x);
 
-
-        System.out.println(pcnt * secondValue);
-
-        
-
+        scanner.close();
+       
     }
 
 

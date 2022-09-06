@@ -10,12 +10,15 @@ Code Stucture and conventions:
 	- use PascalCase for naming convention
 	- use camelCase for variables
 	- Java is case sensitive -> int value != int Value
+	- dispose object to avoid resource leak
 
 	- int + String compiles and gives a string 
 	- char + String compiles and gives a string 
 
 Data Types:
 	-int 4b / long 8b
+Casting
+	to change type just int x = (long) x
 
 
 Linux instalation:
@@ -28,3 +31,6 @@ Linux instalation:
 Commands:
 	javac -version -> check for Java Compiler version 
 	java -version -> check for Java runtime
+
+
+
