@@ -14,11 +14,15 @@ Code Stucture and conventions:
 
 	- int + String compiles and gives a string 
 	- char + String compiles and gives a string 
+	- == or != for int BUT .equals or .!equals for string 
+	- || or 
+	- && and
 
 Data Types:
 	-int 4b / long 8b
 Casting
 	to change type just int x = (long) x
+
 
 
 Linux instalation:

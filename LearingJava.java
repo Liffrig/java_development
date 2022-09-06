@@ -1,32 +1,16 @@
-import java.util.Scanner;
-
 public class LearingJava {
-    public static long points = 0L;
     public static void main(String[] args) {
-      
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input value:");
+        String valueX = "test";
+        String valueY = "Test";
+        String valueZ = "Test";
 
-        double x = scanner.nextDouble();
 
-        System.out.println(x);
+        System.out.println(valueX == valueY);
+        System.out.println(valueY == valueZ);
 
-        scanner.close();
-       
+
+
+
     }
-
-
-    public static void Print(long input){
-        System.out.println(input);
-    }
-
-    public static void UpdatePoints(long amount){
-        points += amount;
-        Print(points);
-    }
-
-
-
 
 }
-
