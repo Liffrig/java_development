@@ -11,6 +11,8 @@ Code Stucture and conventions:
 	- use camelCase for variables
 	- Java is case sensitive -> int value != int Value
 	- dispose object to avoid resource leak
+	- Scanner uses white space as delimiter
+	- 
 
 	- int + String compiles and gives a string 
 	- char + String compiles and gives a string 
@@ -23,7 +25,11 @@ Data Types:
 Casting
 	to change type just int x = (long) x
 
-
+Functions
+	- declaration -> level of access, return value, name, parameters
+	- camelCase for finction names
+	- parametrs vs arguments:
+		-> values the function expects vs the values being passed
 
 Linux instalation:
 	Open JDK 11 – an open-source version of JRE and JDK.
