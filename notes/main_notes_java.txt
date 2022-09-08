@@ -31,6 +31,13 @@ Functions
 	- parametrs vs arguments:
 		-> values the function expects vs the values being passed
 
+Built-in Functions:
+	- Math:
+		 .log()
+		 .sin() / .cos() etc.
+		 .pow(base,exp)
+		 .random()
+
 Linux instalation:
 	Open JDK 11 – an open-source version of JRE and JDK.
 	openjdk version "11.0.16" 2022-07-19
