@@ -8,19 +8,13 @@ public class DiceGame {
     public static void main(String[] args) {
 
         startGame();
-        
-
-
+    
     }
 
     public static int rollDice(){
         int roll = (int) (Math.random()*6);
-        if (roll == 0) {
-            return roll+1;
-        }
-        else{
-            return roll;
-        }
+        return roll + 1;
+
     }
 
     public static void updatePlayerScore(){
@@ -80,10 +74,37 @@ public class DiceGame {
                 printScore('p');
                 checkWinCondition();
                 break;
-        
+
+            case "n":
+                while (croupierScore < playerScore) {
+                    updateCroupierScore();
+                    printScore('c');
+                    checkWinCondition();
+
+                    if (croupierScore == playerScore) {
+                        System.out.println("It's a draw!");
+                        startGame();
+                    }
+                }
+                if (croupierScore == playerScore) {
+                    System.out.println("It's a draw!");
+                    startGame();
+                }
+                else if (croupierScore > playerScore){
+                    System.out.println("Casino always wins :)");
+                    startGame();
+
+                }
+
+
+
+
+
+
             default:
                 break;
         }
+        
         
     }
 
@@ -94,6 +115,7 @@ public class DiceGame {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Want to play a game? [y]/[n]");
         String decision = scanner.nextLine();
+        
 
         switch (decision) {
             case "y":
@@ -102,27 +124,27 @@ public class DiceGame {
                 System.out.println("### GAME STARTS NOW ###\n");
 
                 for (int i = 0; i < 2; i++) {
-                    updateCroupierScore();
                     updatePlayerScore();
                 }
+                updateCroupierScore();
 
                 printScore('p');
                 printScore('c');
+                
                 while (true){
                     hitOrStay();
 
                 }
                 
-
-
                 
-        
             default:
+                scanner.close();
+                System.out.println("Bye!");
                 System.exit(0);
         }
 
 
-        scanner.close();
+        
 
     }
 
