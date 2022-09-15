@@ -20,6 +20,9 @@ Code Stucture and conventions:
 	- || or 
 	- && and
 
+Looping:
+	- loop array reversed => i = array.length -1; i--
+
 Data Types:
 	-int 4b / long 8b
 Casting

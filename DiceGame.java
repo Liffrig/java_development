@@ -96,16 +96,10 @@ public class DiceGame {
 
                 }
 
-
-
-
-
-
             default:
                 break;
         }
-        
-        
+          
     }
 
     
