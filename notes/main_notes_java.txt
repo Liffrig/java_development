@@ -40,6 +40,10 @@ Built-in Functions:
 		 .sin() / .cos() etc.
 		 .pow(base,exp)
 		 .random()
+	- Arrays:
+		.toString()
+		.copyOf() -> to avoid reference trap
+		
 
 Linux instalation:
 	Open JDK 11 – an open-source version of JRE and JDK.
