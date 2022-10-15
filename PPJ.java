@@ -1,18 +1,53 @@
+import java.text.BreakIterator;
 import java.util.Scanner;
 
 public class PPJ {
     
     public static void main(String[] args) {
 
-        int x = 2;
-        int y = 21;
+        // int x = 2;
+        // int y = 21;
+        // System.out.println(Zadanie2(x,y));
+        // System.out.println(Math.pow(x, y));
+
+        int n = 800;
+        int p = 160;
+
+        EuklideanAlgo(n,p);
 
 
-        System.out.println(Zadanie2(x,y));
-        System.out.println(Math.pow(x, y));
+    
 
 
        
+    }
+
+
+    public static void EuklideanAlgo(int n, int p){
+        
+        if (n == p) {
+            System.out.println(n);
+            return;
+        }
+        else if (p > n) {
+            int[] swapped = SwapVars(n, p);
+            n = swapped[0];
+            p = swapped[1];
+        }
+
+        n = n-p;
+
+        EuklideanAlgo(n, p);
+
+    }
+
+    public static int[] SwapVars(int n, int p){
+        int temp = p;
+        p = n;
+        n = temp;
+        int[] swapped = {n,p};
+        return swapped;
+
     }
     
 
@@ -29,10 +64,6 @@ public class PPJ {
         }
         
       
-
-
-
-
         return result;
     }
 
