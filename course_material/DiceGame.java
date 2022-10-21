@@ -1,3 +1,5 @@
+package course_material;
+
 import java.util.Scanner;
 
 public class DiceGame {

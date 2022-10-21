@@ -1,3 +1,5 @@
+package course_material;
+
 public class FizzBuzz {
 
     public static void main(String[] args) {

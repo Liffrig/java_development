@@ -1,3 +1,6 @@
+package course_material;
+
+
 public class LearingJava {
         public static void main(String[] args) {
                 int[] Numbers = {17,12,1,2,14,4,72,5,6,18,7,8,0};

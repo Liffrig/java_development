@@ -43,7 +43,8 @@ Built-in Functions:
 	- Arrays:
 		.toString()
 		.copyOf() -> to avoid reference trap
-		
+	- Arrays.copyOf(array_to_copy, length)
+		- creatres a copy of a array to avoid "reference trap"
 
 Linux instalation:
 	Open JDK 11 – an open-source version of JRE and JDK.
