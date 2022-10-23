@@ -4,30 +4,49 @@ public class PPJ {
     
     public static void main(String[] args) {
 
-        // zad II
+        // zadanie 1
+        boolean [] values = {true, false};
+        System.out.println("Iloczyn logiczny");
+        for (boolean a : values) {
+            for (boolean b : values) {
+                
+                //String alt = String.valueOf(b||c);
+                String con = String.valueOf(a&&b);
+                System.out.println(String.valueOf(a) +  " " + String.valueOf(b) + ">>>" + con);
 
-        double x = (((1+ 2 * 3+ 4) / (5-6)) + 78) / (9- (10/11.0));
-               System.out.println(x);
-
-
-        // Zad III
-        Scanner scanner = new Scanner(System.in);
-
-       while (true) {
-
-        System.out.println("Podaj rok: ");
-        int input = scanner.nextInt();
-        if (input <= 0) {
-            System.out.println("Podano błędny rok.");
-            break;
+            }
         }
-        leap_year_check(input);
-       }
-       scanner.close();
+        System.out.println();
+        System.out.println("Suma logiczna");
+        for (boolean b : values) {
+            for (boolean c : values) {
+                
+                String alt = String.valueOf(b||c);
+                System.out.println(String.valueOf(b) +  " " + String.valueOf(c) + ">>>" + alt);
+            }
+        }
 
-       
+        // zadanie 2
+        int [] numbers = {13,15,17};
+        for (int i : numbers) {
+            System.out.println("Is " + i + " prime");
+            System.out.println(isPrime(i));  
+        }
+
+        // zadanie 5
+        for (boolean a : values) {
+            for (boolean b : values) {
+
+                System.out.println(String.valueOf(a) +  " " + String.valueOf(b) + ">>>");
+                weatherCheck(a, b);
+            }
+        }
+
+
 
     }
+
+
 
     public static void leap_year_check(int input) {
 
@@ -37,39 +56,41 @@ public class PPJ {
         if (checkOne || checkTwo) {
             System.out.println("Rok " + input + " jest przestępny.");   
         }
-
         else{
             System.out.println("Rok " + input + " nie jest przestępny."); 
-
         }
 
+    }
+
+    public static boolean isPrime(int x) {
+        boolean result = true;
+        int value = (int) Math.sqrt(x);
+        
+
+        for (int i = value; i > 1 ; i--) {
+            if (x%i == 0) {
+                result = false;
+                break;
+            } 
+        }
+        return result;
+
+    }
+
+    public static void weatherCheck(boolean rain, boolean sun) {
+
+        if (sun == rain) {
+          System.out.println( sun ? "rainbow" : "cloudy") ;
+        }
+        if (sun == true && rain == false) {
+            System.out.println("sunny");
+        }
+        else{
+            System.out.println("slob");
+        }
+    
         
     }
 
 
-
-    public void zad1_3() {
-
-               // I
-               int y = 5;
-               //  nawias i przypisanie, mnożenie potem print line
-               System.out.println((y=4)* y);
-       
-               // II 
-               // 1 . (6+1+4 / -1) + 78
-               // 2. 9 - (10/11)
-               double x = (((1+ 2 * 3 + 4) / 5-6) + 78)*1.0 / (9.0- (10.0/11.0));
-               System.out.println(x);
-               // III
-               byte b = -128; 
-               b = 127; // 8 bitów -> -128 do 127
-               short s = -32768; // -32’768 do 32’767
-               s = 32767; // -32’768 do 32’767, 
-               int i = 0b01111111;
-               i = 0x7F; // -2,147M do +2,147M
-               long l = 1l;
-               char c = 'a';
-               boolean bl = false;
-        
-    }
 }
