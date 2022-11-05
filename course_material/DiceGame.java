@@ -65,41 +65,42 @@ public class DiceGame {
     }
 
     public static void hitOrStay(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Do you want to hit? [y]/[n]");
-        String decision = scanner.nextLine();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Do you want to hit? [y]/[n]");
+            String decision = scanner.nextLine();
 
 
-        switch (decision) {
-            case "y":
-                updatePlayerScore();
-                printScore('p');
-                checkWinCondition();
-                break;
-
-            case "n":
-                while (croupierScore < playerScore) {
-                    updateCroupierScore();
-                    printScore('c');
+            switch (decision) {
+                case "y":
+                    updatePlayerScore();
+                    printScore('p');
                     checkWinCondition();
+                    break;
 
+                case "n":
+                    while (croupierScore < playerScore) {
+                        updateCroupierScore();
+                        printScore('c');
+                        checkWinCondition();
+
+                        if (croupierScore == playerScore) {
+                            System.out.println("It's a draw!");
+                            startGame();
+                        }
+                    }
                     if (croupierScore == playerScore) {
                         System.out.println("It's a draw!");
                         startGame();
                     }
-                }
-                if (croupierScore == playerScore) {
-                    System.out.println("It's a draw!");
-                    startGame();
-                }
-                else if (croupierScore > playerScore){
-                    System.out.println("Casino always wins :)");
-                    startGame();
+                    else if (croupierScore > playerScore){
+                        System.out.println("Casino always wins :)");
+                        startGame();
 
-                }
+                    }
 
-            default:
-                break;
+                default:
+                    break;
+            }
         }
           
     }
