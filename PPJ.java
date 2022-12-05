@@ -1,63 +1,64 @@
 import java.util.Scanner;
+import PPJLabs.*;
 
 public class PPJ {
     
     public static void main(String[] args) {
 
-        // Scanner scanner = new Scanner(System.in);
+        // int superCount = 0;
+        // for (long i = 10l; i < 10000000000l; i++) {
+        //     if (isArmstrongNumber(i)) {
+        //         superCount++;
+        //         System.out.println(i + " " + "is Armstrong's number " + superCount );
+        //     }
+        // };
 
-        // System.out.println("Podaj liczbę uzyskanych oraz maksymalną liczbę punktów.");
-        
-        // for (int i = 0; i < 2; i++) {
-        //     int input = scanner.nextInt();
-        // }
-        // scanner.close();
+        PPJLabs.Assistant marek = new Assistant();
 
+        int[][] tab = {{1,2,6,7,8,9,0},{1,2,6,7,8,9,0},{1,2,6},{1,6,7,8,9,0} };
 
-        // IV, V
-        int wrt = 2;
-        for (int i = 1; i < 11; i++) {
-            if (i == 10) {
-                System.out.print(i*wrt);
-            }
-            else{
-                System.out.print(i*wrt + ",");
-            }
-        }
-        System.out.println();
+        marek.printSeparator("test");
 
-        //VI while i do while
-        int base_w = 1;
-        int base_dw = 1;
-        System.out.println("While");
-        while (base_w < 1) {
-            base_w ++;
-            System.out.println(base_w);
-            
-        }
-        System.out.println("Do While");
-        do {
-            base_dw ++;
-            System.out.println(base_dw);
-        } while (base_dw < 1);
+        marek.printArray2D(tab);
 
-        // zad VIII
-        // 1 / pow(2,n)
+        System.out.println(marek.isPrime(7919));
 
         
-        for (int i = 0; i < 10; i++) {
-            
-
-        }
-
-
-        
-
-
-        
-
 
     }
+
+    public static boolean isArmstrongNumber(long numberToCheck) {
+
+        long total = 0l;
+        long [] digits = splitToDigits(numberToCheck);
+        double power = digits.length;
+        
+        for (int i = 0; i < digits.length; i++) {
+           total += (long) (Math.pow((double) digits[i], power));
+        }
+
+        return total == numberToCheck;
+    }
+
+
+
+    public static long[] splitToDigits(long number) {
+        int arrayLength = ((int) Math.log10((double) number)) + 1;
+        double power = (double) (arrayLength - 1);
+   
+        long[] result = new long[arrayLength]; 
+
+        for (int i = 0; i < result.length; i++) {
+             int divisor = (int) Math.pow(10.0, power);
+             result[i] = number / divisor;
+             number = number - (divisor * result[i]);
+             power --;
+        }
+        return result;
+    }
+
+
+
 
     // VII
     public static void Zad7() {
