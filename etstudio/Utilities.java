@@ -22,8 +22,6 @@ public class Utilities {
 
     }
 
-    
-
 
     public static int[] SwapVars(int n, int p){
         int temp = p;

@@ -19,12 +19,10 @@ public class PPJ {
 
         marek.printSeparator("test");
 
-        marek.printArray2D(tab);
-
-        System.out.println(marek.isPrime(7919));
+        marek.printArray(marek.splitToDigits(137213));
 
         
-
+        
     }
 
     public static boolean isArmstrongNumber(long numberToCheck) {
@@ -53,9 +51,12 @@ public class PPJ {
              result[i] = number / divisor;
              number = number - (divisor * result[i]);
              power --;
+            
         }
         return result;
     }
+
+
 
 
 
