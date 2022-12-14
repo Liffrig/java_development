@@ -83,6 +83,7 @@ public class ex01 {
         System.out.println(a + " " + b + " " + c);
 
 
+        //Zadanie 4
         assistant.printSeparator("Zadanie 4");
 
         Scanner sca = new Scanner(System.in);
