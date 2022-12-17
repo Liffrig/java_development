@@ -117,6 +117,13 @@ public class Assistant {
 
     }
 
+    public double getRandomDouble(double range){
+
+        double randomDouble = ((double) (Math.random() * (range)));
+        return randomDouble;
+
+    }
+
 
 
     // varoius numerical methods ==============================================================

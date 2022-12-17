@@ -30,3 +30,10 @@ dać zadania w pakietach w klasy
 472335975 is Armstrong's number 20
 534494836 is Armstrong's number 21
 912985153 is Armstrong's number 22
+
+
+kolokwium 50 min
+- * bez obiektów *
+- tablice 1d i 2D
+- funkcje statyczne
+- pętle ify itd.
