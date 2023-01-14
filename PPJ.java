@@ -1,177 +1,133 @@
 import PPJLabs.*;
+import Drzewa.*;
+
 
 public class PPJ {
     
     public static void main(String[] args) {
-        PPJLabs.Assistant assistant = new Assistant();
+        Assistant assistant = new Assistant();
+        // PPJ 2023-01-14
+        assistant.printSeparator("Zadanie 1");
+        DetektorDymu det = new DetektorDymu();
+        try {
+            det.monitor(false);
+            det.monitor(true);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        assistant.printSeparator(" Zadanie 1"); // =====================
+        assistant.printSeparator("Zadanie 2");
 
-        Person person = new Person();
-        person.name = "Jasio";
-        person.surname = "Kowalski";
-        person.birthyear = 2022;
-        System.out.println(person.name + " " + person.surname + " " + person.birthyear);
+        Rakieta rakieta = new Rakieta("Zenit-11");
+        System.out.println(rakieta.toString());
+        rakieta.zatankuj(assistant, 100000);
 
-        assistant.printSeparator(" Zadanie 2"); // =====================
-
-        Fruit granat = new Fruit("Granat"); 
-        granat.show();
+        try {
+            rakieta.start();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         assistant.printSeparator("Zadanie 3");
+
+        DrzewoIglaste sosna = new DrzewoIglaste(true, 51, "wąskie", 3 , 1.7);
+        DrzewoIglaste modrzew = new DrzewoIglaste(true, 41, "wąskie", 2, 0);
+        DrzewoLisciaste dab = new DrzewoLisciaste(false, 69, "szerokie", 1);
+        DrzewoOwocowe morela = new DrzewoOwocowe(false, 21, "małe", 3, "morela");
+        DrzewoOwocowe sliwa = new DrzewoOwocowe(false, 44, "małe", 2, "śliwka");
+
+        Drzewo[] las = {sosna,modrzew,dab,morela,sliwa};
+
+        for (Drzewo drzewo : las) {
+            System.out.println(drzewo.toString());
+        }
+
+
         
-        Kwadrat kwadrat = new Kwadrat(7.0);
-        kwadrat.show();
 
-        assistant.printSeparator("Zadanie 4");
-
-        Walec walec = new Walec(5, 7);
-        walec.show();
-
-        assistant.printSeparator("Zadanie 5");
-
-        KulaW kulaW_szescianie = new KulaW(kwadrat);
-        KulaW kulaW_walcu = new KulaW(walec);
-
-        System.out.println("kulaW_szescianie V: " + kulaW_szescianie.calculateV());
-        System.out.println("kulaW_walcu V: "+ kulaW_walcu.calculateV());
-
-        assistant.printSeparator("Zadanie 6");
-
-
-
-
+        
+        
 
 
 
 
         
-        
-        
-    }
-
-}
-
-class Person {
-
-    public String name;
-    public String surname;
-    public int birthyear;
-
-}
-
-class Fruit{
-    private String name;
-    private double weight;
-
-    public Fruit(String name) {
-        this.name = name;
-        this.weight = getRandomFruitWeight(0.3) + 0.5; 
-    }
-
-    public void show(){
-        System.out.println("Nazwa owocu: " + this.name);
-        System.out.println("Waga: " + this.weight);
-    }
-
-    private double getRandomFruitWeight(double range){
-
-        double randomDouble = Math.random() * range;
-        return randomDouble;
-
-    }
-
     
-}
-
-class Kwadrat{
-    private double bok;
-
-    public Kwadrat(double bok) {
-        this.bok = bok;
-    }
-
-    public void show(){
-        double polePowierzchni = Math.pow(bok, 2);
-        double vSzescianu = polePowierzchni * bok;
-
-        System.out.println("Pole powierzchni kwadratu: " + polePowierzchni );
-        System.out.println("Objętość sześcianu o podstawie kwadratu: " + vSzescianu);
-
-    }
-
-    public double getBok(){
-        return this.bok;
     }
 }
 
-class Walec{
-    private double r;
-    private double h;
+class Rakieta{
+    private String nazwa;
+    private int wagaPaliwa;
 
-    public Walec(double r, double h) {
-        this.r = r;
-        this.h = h;
+    public Rakieta(String nazwa){
+        this.nazwa = nazwa;
+        this.wagaPaliwa = 0;
     }
 
-    public void show(){
-        double polePodstawy = Math.PI * Math.pow(r, 2);
-        double objetosc = polePodstawy * this.h;
+    public String toString(){
+        return "Rakieta: " + this.nazwa;
+    }
 
-        System.out.println("Pole podstawy walca: " + polePodstawy);
-        System.out.println("Objętość walca: " + objetosc);
+
+
+    public void zatankuj(Assistant assistant, int maxAmount){
+
+        this.wagaPaliwa = assistant.getRandomInt(maxAmount);
 
     }
 
-    public double calculateV() {
-        double polePodstawy = Math.PI * Math.pow(r, 2);
-        double objetosc = polePodstawy * this.h;
-        return objetosc;
+    public void start() throws Exception{
+
+        if (this.wagaPaliwa > 1000) {
+            for (int i = 10; i >= 0; i--) {
+                System.out.println(i);
+            }
+            System.out.println("Start rakiety...");
+        }
+        else{
+            throw new Exception("start anulowany - za mało paliwa: " + this.wagaPaliwa);
+        }
+
+
+    }
+
+
+
+}
+
+class Alarm
+extends Exception{
+    boolean raiseAlarm;
+
+    public Alarm(String message){
+        super(message);
     }
 
 }
 
-class KulaW{
-    private double r;
+class DetektorDymu {
 
+    private Alarm sprawdz() throws Alarm{
 
-
-    public KulaW(Walec walec) {
+      throw new Alarm("eoeoe"); 
         
-        double R = Math.pow(
-            (
-                (3 * walec.calculateV()) / (4 * Math.PI)), 
-            (1.0/3.0)
-            ) ;
-
-        this.r = R;
     }
 
-    public KulaW(Kwadrat kwadrat) {
-
-        double R = Math.pow(
-            (
-                (3 * Math.pow(kwadrat.getBok(), 3)) / (4 * Math.PI)), 
-            (1.0/3.0)
-            ) ;
-
-        this.r = R;
-    }
-
-    public double calculateV(){
-
-        double v = (4* Math.PI * Math.pow(this.r, 3)) / 3;
-        return v;
+    public void monitor(boolean dym) throws Alarm{
+        if (dym) {
+            this.sprawdz();
+        }
+        else{
+            System.out.println("ok");
+        }
     }
 
 
 
 }
 
-class KulaNa{
-    
-
-}
 
 
 

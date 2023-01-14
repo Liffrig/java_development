@@ -243,3 +243,10 @@ public class Utilities {
       }
     
 }
+// class Recurs1 {
+//     static int count(int[] arr, int from, int what) {
+//         if (from < ) {
+            
+//         }
+        
+//     }

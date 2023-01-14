@@ -1,13 +1,49 @@
 package Exercises;
 import java.util.Scanner;
-
 import PPJLabs.Assistant;
 
 public class ex05 {
     public static void main(String[] args) {
 
-        //ex05.zad1();
-        ex05.QuadraticEq();
+        Assistant assistant = new Assistant();
+        assistant.printSeparator("Zadanie 3");
+
+        double[] tresholds = {-0.1, 50.0, 62.6, 75.0, 81.25, 87.5, 99.9, 101.0};
+        double[] marks = {2.0, 3.0, 3.5, 4.0, 4.5, 5.0, 5.0};
+
+        do 
+        {
+            System.out.println("Wprowadź zdobyte punkty i maksymalną liczbę: ");
+            Scanner scanner = new Scanner(System.in);
+            double[] params = new double[2];
+            int supIndex = -1;
+    
+            for (int i = 0; i < params.length; i++) {
+                double input = scanner.nextDouble();
+                params[i] = input;
+    
+            }
+            double result = params[0] / params[1] * 100.0;
+
+            
+
+            for (int i = 0; i < tresholds.length; i++) {
+                 
+                if((result >= tresholds[i]) && (result < tresholds[i+1])){
+                    supIndex = i;
+                    break;
+                } 
+            }
+
+            System.out.println("Zdobyte punkty: " + params[0] + "/" + params[1] + " -> " + result );
+            System.out.println("Ocena: " + marks[supIndex]);
+        
+        }while (false);
+
+
+
+        
+   
 
     }
         
