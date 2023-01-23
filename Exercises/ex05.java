@@ -4,51 +4,100 @@ import PPJLabs.Assistant;
 
 public class ex05 {
     public static void main(String[] args) {
-
         Assistant assistant = new Assistant();
-        assistant.printSeparator("Zadanie 3");
 
-        double[] tresholds = {-0.1, 50.0, 62.6, 75.0, 81.25, 87.5, 99.9, 101.0};
-        double[] marks = {2.0, 3.0, 3.5, 4.0, 4.5, 5.0, 5.0};
 
-        do 
-        {
-            System.out.println("Wprowadź zdobyte punkty i maksymalną liczbę: ");
-            Scanner scanner = new Scanner(System.in);
-            double[] params = new double[2];
-            int supIndex = -1;
-    
-            for (int i = 0; i < params.length; i++) {
-                double input = scanner.nextDouble();
-                params[i] = input;
-    
-            }
-            double result = params[0] / params[1] * 100.0;
 
+        assistant.printSeparator("Zadanie 4");
+
+        for (int i = 1; i < 11; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        assistant.printSeparator("Zadanie 5");
+        int wrt = 2;
+        for (int i = 1; i < 11; i++) {
+            System.out.print(i*wrt + " ");
+        }
+        System.out.println();
+
+        assistant.printSeparator("Zadanie 6");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wprowadź liczbę mniejsza niż 10.");
+        var input = scanner.nextInt();
+        var rand_num = 1;
+
+        var while_result = input;
+        var dowhile_result = input;
+
+        while (input>10) {
+            while_result += rand_num;
+        }
+
+        do {
+            dowhile_result += rand_num;
+        } while (input > 10);
+
+        System.out.println("while -> " + while_result);
+        System.out.println("do while -> "+dowhile_result);    
+
+        assistant.printSeparator("Zadanie 7");
+
+        int inpt;
+        int intCount=0; 
+        int intSum = 0;
+
+        do {
+            System.out.println("Wprowadź dowolną liczbę całkowitą: ");
+            inpt = scanner.nextInt();
+            intCount ++;
+            intSum += inpt;
             
+        } while (inpt > 0);
 
-            for (int i = 0; i < tresholds.length; i++) {
-                 
-                if((result >= tresholds[i]) && (result < tresholds[i+1])){
-                    supIndex = i;
-                    break;
-                } 
+        System.out.println("Liczba elementów = " + intCount);
+        System.out.println("Suma = " + intSum);
+
+        assistant.printSeparator("Zadanie 8");
+
+        for (double i = 0; i < 10; i++) {
+            double sigma = 1 / (Math.pow(2, i));
+            System.out.println("wyraz " + i + " -> " + sigma);
+        }
+
+
+        assistant.printSeparator("Zadanie 9");
+
+        int dzien = 6;
+        int miesiac = 7;
+        int year = 2023;
+        int[] days_on_1st_month = {0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+
+        int leap_day = assistant.isLeapYear(year) && (miesiac > 2) ? 1:0;
+        System.out.println(year + "-" + miesiac + "-" + dzien + " --> " + (days_on_1st_month[miesiac-1] + dzien + leap_day + " dzień roku."));
+
+
+        assistant.printSeparator("Zadanie 10");
+        int rows = 6;
+        int columns = 9;
+        int size = rows * columns;
+
+        for (int i = 0; i < size; i++) {
+            if (i % columns == 0) {
+                System.out.println();
             }
+            String sign = i % 2 == 0 ? "[*]":"[ ]";
+            System.out.print(sign);
 
-            System.out.println("Zdobyte punkty: " + params[0] + "/" + params[1] + " -> " + result );
-            System.out.println("Ocena: " + marks[supIndex]);
-        
-        }while (false);
+        }
+        System.out.println();
 
-
-
-        
-   
 
     }
         
-
-
+    // zad I
     public static void zad1() {
         
         Assistant assistant = new Assistant();
@@ -149,4 +198,40 @@ public class ex05 {
       
         return result;
     }
+
+
+    // zad III
+    public static void zad3(){
+
+        Assistant assistant = new Assistant();
+        assistant.printSeparator("Zadanie 3");
+
+        double [] tresholds = {0.0, 50.0, 62.5, 74.9,81.24,87.4,87.5,100.0};
+        double [] marks = {2.0,3.0,3.5,4.0,4.5,5.0,5.0};
+
+       
+            System.out.println("Wprowadź zdobyte punkty i maksymalną liczbę: ");
+            Scanner scanner = new Scanner(System.in);
+            double[] params = new double[2];
+            for (int i = 0; i < params.length; i++) {
+                double input = scanner.nextDouble();
+                params[i] = input;
+    
+            }
+            double result = params[0] / params[1] * 100.0;
+    
+            // find a mark to a result
+    
+            int treshold_indicator = 0;
+            for (int i = 0; i < tresholds.length; i++) {
+                if (result > tresholds[i+1]) {
+                    treshold_indicator++;
+                }
+                else{break;}
+            }
+    
+            System.out.println("wynik: " + result + " ocena: " + marks[treshold_indicator] );
+
+    }
+
 }

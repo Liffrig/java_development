@@ -106,16 +106,7 @@ public class ex01 {
                 "\nexactlyTwo: " + exactlyTwo +
                 "\natLeastOne: " + atLeastOne +
                 "\natLeastTwo: " + atLeastTwo);
-
-
-
-     
+                
     }
-
-
-
-
-
-
     
 }

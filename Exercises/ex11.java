@@ -39,15 +39,6 @@ public class ex11 {
 
         assistant.printSeparator("Zadanie 6");
 
-
-
-
-
-
-
-
-        
-        
         
     }
 

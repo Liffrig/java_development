@@ -168,6 +168,18 @@ public class Assistant {
         return result;
     }
 
+    // ==================================================
+
+    public boolean isLeapYear(int year){
+
+        boolean con1 = year % 4 == 0;
+        boolean con2 = year % 100 > 0;
+        boolean con3 =  year % 400 == 0;
+        return ((con1 && con2) || con3);
+    }
+
+
+
 
 
 

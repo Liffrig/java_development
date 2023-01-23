@@ -42,17 +42,6 @@ public class PPJ {
         for (Drzewo drzewo : las) {
             System.out.println(drzewo.toString());
         }
-
-
-        
-
-        
-        
-
-
-
-
-        
     
     }
 }
