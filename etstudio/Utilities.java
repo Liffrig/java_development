@@ -4,43 +4,6 @@ import java.util.Scanner;
 
 public class Utilities {
 
-
-    public static boolean isArmstrongNumber(long numberToCheck) {
-
-        long total = 0l;
-        long [] digits = splitToDigits(numberToCheck);
-        double power = digits.length;
-        
-        for (int i = 0; i < digits.length; i++) {
-           total += (long) (Math.pow((double) digits[i], power));
-        }
-
-        return total == numberToCheck;
-    }
-
-
-
-    public static long[] splitToDigits(long number) {
-        int arrayLength = ((int) Math.log10((double) number)) + 1;
-        double power = (double) (arrayLength - 1);
-   
-        long[] result = new long[arrayLength]; 
-
-        for (int i = 0; i < result.length; i++) {
-             int divisor = (int) Math.pow(10.0, power);
-             result[i] = number / divisor;
-             number = number - (divisor * result[i]);
-             power --;
-            
-        }
-        return result;
-    }
-
-
-
-
-
-
     // VII
     public static void Zad7() {
 

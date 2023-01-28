@@ -6,8 +6,6 @@ public class ex05 {
     public static void main(String[] args) {
         Assistant assistant = new Assistant();
 
-
-
         assistant.printSeparator("Zadanie 4");
 
         for (int i = 1; i < 11; i++) {
@@ -93,6 +91,8 @@ public class ex05 {
 
         }
         System.out.println();
+
+        scanner.close();
 
 
     }
@@ -231,7 +231,7 @@ public class ex05 {
             }
     
             System.out.println("wynik: " + result + " ocena: " + marks[treshold_indicator] );
-
+            scanner.close();
     }
 
 }

@@ -64,6 +64,13 @@ public class Assistant {
         }
     }
 
+    public void printArray2D(float[][] array){
+        for (int i = 0; i < array.length; i++) {
+            printArray(array[i]);
+        }
+    }
+
+
     // Swap variables ==============================================================
     public int[] swapVariables(int n, int p){
         int temp = p;
@@ -124,6 +131,11 @@ public class Assistant {
 
     }
 
+    public float getRandomFloat(int range){
+        float randomFloat = ((float) (Math.random() * (range)));
+        return randomFloat;
+    }
+
 
 
     // varoius numerical methods ==============================================================
@@ -177,6 +189,58 @@ public class Assistant {
         boolean con3 =  year % 400 == 0;
         return ((con1 && con2) || con3);
     }
+
+    //================================
+    public int[] addItemTotheArray(int[] originalArr, int item){
+        int[] combinedArray = new int[originalArr.length + 1];
+        for (int i = 0; i < originalArr.length; i++) {
+            combinedArray[i] = originalArr[i];
+        }
+        combinedArray[combinedArray.length-1] = item;
+        return combinedArray;
+    }
+
+    public int findMinElement(int[] array){
+        int min = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            min = array[i] < min ? array[i] : min; 
+        }
+        return min;
+    }
+
+    public int findMaxElement(int[] array){
+        int max = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            max = array[i] > max ? array[i] : max; 
+        }
+        return max;
+    }
+
+    public int[] GetSuperRandomArray(int sizeRange, int argRange){
+        Assistant assistant = new Assistant();
+        int arrSize = 1 + assistant.getRandomInt(sizeRange);
+        int [] randArray = new int[arrSize];
+        for (int i = 0; i < randArray.length; i++) {
+            randArray[i] = assistant.getRandomInt(argRange);
+        }
+        return randArray;
+    }
+
+    public float[] GetRandomFloatArray(int sizeRange){
+        Assistant assistant = new Assistant();
+        int arrSize = 1 + assistant.getRandomInt(sizeRange);
+        float [] randArray = new float[arrSize];
+        for (int i = 0; i < randArray.length; i++) {
+            randArray[i] = assistant.getRandomFloat(1);
+        }
+        return randArray;
+    }
+
+
+
+    
 
 
 
