@@ -12,6 +12,8 @@ public class PPJ {
 
         Assistant assistant = new Assistant();
 
+        System.out.println(assistant.isPrime(26701));
+
         assistant.printSeparator("Zadanie 1");
 
         try {

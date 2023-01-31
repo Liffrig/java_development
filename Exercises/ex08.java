@@ -1,5 +1,4 @@
 package Exercises;
-
 import PPJLabs.Assistant;
 
 public class ex08 {
@@ -113,22 +112,31 @@ public class ex08 {
         }
         System.out.println();
 
-       
-        
+        assistant.printSeparator("Zadanie 5");
+        show(1);
 
+        assistant.printSeparator("Zadanie 6");
 
+        // wtf, lokalna, nieodnośnikowa zmienna nie zmieni się
+        int wrt = 5;
+        show(wrt);
+        modifyValue(wrt);
+        show(wrt);
 
+        assistant.printSeparator("Zadanie 7");
 
+        int r = assistant.findMax(1, 2, 3);
 
+        System.out.println("1,2,3 -> max is " + r + " zero if...");
+    }
 
+    public static void show(int inpt){
+        System.out.println(">>> " + inpt);   
+    }
 
-
-        
-
-
-
-
-
-        
+    public static void modifyValue(int inpt){
+       show(inpt);
+       inpt *= 5;
+       show(inpt); 
     }
 }

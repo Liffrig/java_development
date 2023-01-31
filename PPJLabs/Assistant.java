@@ -238,17 +238,15 @@ public class Assistant {
         return randArray;
     }
 
+    private int findMaxInternal(int x, int y){
+        return (x + y + Math.abs(x - y))/2;
+    }
 
+    public int findMax(int x, int y, int z){
+        int midResult = this.findMaxInternal(x, y);
+        return this.findMaxInternal(midResult, z);
+    }
 
-    
-
-
-
-
-
-
-
-
-
+  
 
 }

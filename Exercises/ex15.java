@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import PPJLabs.Assistant;
 
-public class ex09a {
+public class ex15 {
     public static void main(String[] args) {
 
         Assistant assistant = new Assistant();
