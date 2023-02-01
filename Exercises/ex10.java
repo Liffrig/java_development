@@ -6,15 +6,15 @@ public class ex10 {
     public static void main(String[] args) {
         PPJLabs.Assistant assistant = new Assistant();
 
-        assistant.printSeparator(" Zadanie 1"); // =====================
+        assistant.printSeparator(" Zadanie 1"); 
 
         Person person = new Person();
-        person.name = "Jasio";
-        person.surname = "Kowalski";
+        person.name = "Andrzej";
+        person.surname = "Szpak";
         person.birthyear = 2022;
         System.out.println(person.name + " " + person.surname + " " + person.birthyear);
 
-        assistant.printSeparator(" Zadanie 2"); // =====================
+        assistant.printSeparator(" Zadanie 2");
 
         Fruit granat = new Fruit("Granat"); 
         granat.show();
