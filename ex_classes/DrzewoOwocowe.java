@@ -11,10 +11,12 @@ public class DrzewoOwocowe extends DrzewoLisciaste{
     @Override
     public String toString(){
         return
-        "wiecznie zielone: " + super.wiecznieZielone + "\n" +
-        "wysokość: " + super.wysokosc + "\n" +
-        "przekrojDrzewa: " + super.przekrojDrzewa + "\n" +
-        "kształtLiscia: " + super.ksztaltLiscia + "\n" +
-        "nazwaOwocu: " + this.nazwaOwocu + "\n";
+        super.toString() + "\n" +
+        "nazwaOwocu: " + this.nazwaOwocu;
+    }
+
+    @Override
+    public void zerwijOwoc() throws DrzewoBezOwocoweException{
+        System.out.println(this.nazwaOwocu + " ...mniam!");
     }
 }

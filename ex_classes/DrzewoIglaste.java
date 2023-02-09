@@ -14,11 +14,9 @@ public class DrzewoIglaste extends Drzewo {
     @Override
     public String toString(){
         return
-        "wiecznie zielone: " + super.wiecznieZielone + "\n" +
-        "wysokość: " + super.wysokosc + "\n" +
-        "przekrojDrzewa: " + super.przekrojDrzewa + "\n" +
+        super.toString() + "\n" +
         "ilośćIgiel: " + this.ilośćIgiel + "\n" +
-        "dlugoscSzyszki: " + this.dlugoscSzyszki + "\n"; 
+        "dlugoscSzyszki: " + this.dlugoscSzyszki; 
       
     }
 

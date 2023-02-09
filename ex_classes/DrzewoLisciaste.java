@@ -11,9 +11,7 @@ public class DrzewoLisciaste extends Drzewo {
     @Override
     public String toString(){
         return
-        "wiecznie zielone: " + super.wiecznieZielone + "\n" +
-        "wysokość: " + super.wysokosc + "\n" +
-        "przekrojDrzewa: " + super.przekrojDrzewa + "\n" +
-        "kształtLiscia: " + this.ksztaltLiscia + "\n";
+        super.toString() + "\n" +
+        "kształtLiscia: " + this.ksztaltLiscia;
     }
 }

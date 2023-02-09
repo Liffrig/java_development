@@ -10,16 +10,23 @@ public class Drzewo {
         this.przekrojDrzewa = przekrojDrzewa;
         this.wiecznieZielone = wiecznieZielone;
         this.wysokosc= wysokosc;
-
     }
 
     @Override
     public String toString(){
         return
+            super.toString() + "\n" +
             "wiecznie zielone: " + wiecznieZielone + "\n" +
             "wysokość: " + wysokosc + "\n" +
-            "przekrojDrzewa: " + przekrojDrzewa + "\n";
+            "przekrojDrzewa: " + przekrojDrzewa;
     }
+
+    public void zerwijOwoc() throws DrzewoBezOwocoweException{
+        throw new DrzewoBezOwocoweException();
+
+    }
+
+
 
 
     

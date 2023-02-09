@@ -1,8 +1,13 @@
-package ex_classes;
+package Exercises;
 import PPJLabs.*;
+import ex_classes.Drzewo;
+import ex_classes.DrzewoIglaste;
+import ex_classes.DrzewoLisciaste;
+import ex_classes.DrzewoOwocowe;
+import ex_classes.Rakieta;
 
 
-public class to_clean {
+public class ex12 {
     
     public static void main(String[] args) {
         Assistant assistant = new Assistant();
@@ -40,50 +45,17 @@ public class to_clean {
         Drzewo[] las = {sosna,modrzew,dab,morela,sliwa};
 
         for (Drzewo drzewo : las) {
-            System.out.println(drzewo.toString());
+
+            try {
+                drzewo.zerwijOwoc();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+            
         }
     
     }
-}
-
-class Rakieta{
-    private String nazwa;
-    private int wagaPaliwa;
-
-    public Rakieta(String nazwa){
-        this.nazwa = nazwa;
-        this.wagaPaliwa = 0;
-    }
-
-    public String toString(){
-        return "Rakieta: " + this.nazwa;
-    }
-
-
-
-    public void zatankuj(Assistant assistant, int maxAmount){
-
-        this.wagaPaliwa = assistant.getRandomInt(maxAmount);
-
-    }
-
-    public void start() throws Exception{
-
-        if (this.wagaPaliwa > 1000) {
-            for (int i = 10; i >= 0; i--) {
-                System.out.println(i);
-            }
-            System.out.println("Start rakiety...");
-        }
-        else{
-            throw new Exception("start anulowany - za mało paliwa: " + this.wagaPaliwa);
-        }
-
-
-    }
-
-
-
 }
 
 class Alarm
