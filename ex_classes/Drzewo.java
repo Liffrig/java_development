@@ -1,4 +1,4 @@
-package Drzewa;
+package ex_classes;
 
 public class Drzewo {
 

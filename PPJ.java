@@ -3,8 +3,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import Drzewa.MojSkaner;
 import PPJLabs.Assistant;
+import ex_classes.MojSkaner;
 
 public class PPJ {
     
